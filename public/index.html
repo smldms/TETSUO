@@ -8,14 +8,18 @@
     //---- do not edit the following code (you can indent as you wish)
     let search = new URLSearchParams(window.location.search)
     let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
-    var fxhash = search.get('fxhash') || "oo" + Array(49).fill(0).map(_ => alphabet[(Math.random() * alphabet.length) | 0]).join('')
+    var fxhash = search.get('fxhash') || "oo" + Array(49).fill(0).map(_ => alphabet[(Math.random() * alphabet.length) |
+      0]).join('')
     let b58dec = str => [...str].reduce((p, c) => p * alphabet.length + alphabet.indexOf(c) | 0, 0)
     let fxhashTrunc = fxhash.slice(2)
     let regex = new RegExp(".{" + ((fxhash.length / 4) | 0) + "}", 'g')
     let hashes = fxhashTrunc.match(regex).map(h => b58dec(h))
     let sfc32 = (a, b, c, d) => {
       return () => {
-        a |= 0; b |= 0; c |= 0; d |= 0
+        a |= 0;
+        b |= 0;
+        c |= 0;
+        d |= 0
         var t = (a + b | 0) + d | 0
         d = d + 1 | 0
         a = b ^ b >>> 9
@@ -33,7 +37,7 @@
     function fxpreview() {
       console.log("fxhash: TRIGGER PREVIEW")
     }
-      //---- /do not edit the following code
+    //---- /do not edit the following code
   </script>
 
   <link rel="stylesheet" href="./style.css">
@@ -55,9 +59,13 @@
 </head>
 
 <body>
+  <div id="p5_loading" class="loadingclass">
+    <img src="assets/loading.gif"></br>
+    <p align="center">please wait...</p>
+  </div>
+
   <div id="fullScreen">
     <div id="progress">
-      
     </div>
   </div>
 </body>
