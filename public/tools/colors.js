@@ -40,8 +40,8 @@ if (palette.n < 0.05 * 1) {
     palette.clr = ["#D9436B", "#292259"]
     palette.name = "🎨 8"
 } else if (palette.n < 0.05 * 9) {
-    palette.bgClr = ["#5CACF2", "#263173"]
-    palette.clr = ["#EAF205", "#3565F2"]
+    palette.bgClr = ["#242424", "#212121"]
+    palette.clr = ["#FFFFFF", "#999999"]
     palette.name = "🎨 9"
 } else if (palette.n < 0.05 * 10) {
     palette.bgClr = ["#F21313", "#0A4359"]
